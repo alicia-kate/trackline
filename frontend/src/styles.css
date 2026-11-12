@@ -1,0 +1,975 @@
+:root {
+    --bg: #f6f7f8;
+    --card: #fff;
+    --tx: #1a1d23;
+    --mu: #6b7280;
+    --ln: #e5e7eb;
+    --bl: #2457d6;
+    --bb: #e8eefc;
+    --am: #fdf1dc;
+    --amt: #8a5a00;
+    --gr: #e3f5ea;
+    --grt: #16754a;
+    --rd: #fde8e8;
+    --rdt: #b3261e;
+    --gy: #eef0f2;
+    --ca: #2457d6;
+    --cl: #7c4dff;
+    --cs: #0f9d8a;
+    color-scheme: light
+}
+
+:root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+[hidden] {
+    display: none !important
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--tx);
+    font: 14px/1.45 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.app {
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh
+}
+
+aside {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: 214px;
+    flex: none;
+    background: var(--card);
+    border-right: 1px solid var(--ln);
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px
+}
+
+.ws {
+    font-size: 12px;
+    color: var(--mu);
+    margin-bottom: 14px
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+nav a {
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--mu)
+}
+
+nav a.on {
+    background: var(--bb);
+    color: var(--bl);
+    font-weight: 600
+}
+
+.me {
+    margin-top: auto;
+    font-size: 12px;
+    color: var(--mu)
+}
+
+.me b {
+    display: block;
+    color: var(--tx)
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 24px 32px 40px
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px
+}
+
+h2 {
+    margin: 0 0 2px;
+    font-size: 16px
+}
+
+.mu,
+small {
+    color: var(--mu)
+}
+
+small {
+    font-size: 12px
+}
+
+.hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap
+}
+
+.hd p {
+    margin: 4px 0 0
+}
+
+.btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid var(--ln);
+    border-radius: 8px;
+    background: var(--card);
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--tx)
+}
+
+.btn.p {
+    background: var(--bl);
+    border-color: var(--bl);
+    color: #fff
+}
+
+.btn.d {
+    color: var(--rdt)
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--ln);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px
+}
+
+.g4,
+.g3 {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 16px
+}
+
+.g4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+.g3 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+}
+
+.g2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    align-items: start
+}
+
+.f2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px
+}
+
+.kpi {
+    margin: 0
+}
+
+.kpi b {
+    display: block;
+    font-size: 30px;
+    margin: 4px 0
+}
+
+.warn {
+    background: var(--am);
+    border-color: transparent;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.warn b {
+    font-size: 22px;
+    color: var(--amt)
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    align-items: center
+}
+
+select,
+input,
+textarea {
+    font: inherit;
+    color: var(--tx);
+    background: var(--card);
+    border: 1px solid var(--ln);
+    border-radius: 8px;
+    padding: 8px 10px;
+    min-width: 0
+}
+
+input.s {
+    flex: 1;
+    min-width: 200px
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: var(--mu);
+    margin-bottom: 4px
+}
+
+label+* {
+    width: 100%
+}
+
+.sc {
+    overflow-x: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px
+}
+
+th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--mu);
+    background: var(--bg);
+    padding: 9px 10px
+}
+
+td {
+    padding: 11px 10px;
+    border-top: 1px solid var(--ln);
+    vertical-align: top
+}
+
+td b {
+    display: block
+}
+
+tr[onclick] {
+    cursor: pointer
+}
+
+tr[onclick]:hover td {
+    background: var(--bg)
+}
+
+.bd {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--gy);
+    color: var(--mu)
+}
+
+.bd.gr {
+    background: var(--gr);
+    color: var(--grt)
+}
+
+.bd.bl {
+    background: var(--bb);
+    color: var(--bl)
+}
+
+.bd.am {
+    background: var(--am);
+    color: var(--amt)
+}
+
+.bd.rd {
+    background: var(--rd);
+    color: var(--rdt)
+}
+
+.bar {
+    display: flex;
+    height: 10px;
+    background: var(--gy);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 6px 0 4px
+}
+
+.bar i.ca {
+    background: var(--ca)
+}
+
+.bar i.cl {
+    background: var(--cl)
+}
+
+.bar i.cs {
+    background: var(--cs)
+}
+
+.lg {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--mu);
+    margin: 6px 0 2px
+}
+
+.lg i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 5px
+}
+
+.lg i.ca {
+    background: var(--ca)
+}
+
+.lg i.cl {
+    background: var(--cl)
+}
+
+.lg i.cs {
+    background: var(--cs)
+}
+
+.lk {
+    cursor: pointer
+}
+
+.lk:hover {
+    border-color: var(--bl)
+}
+
+.li.lk:hover {
+    background: var(--bg)
+}
+
+.kpi.act {
+    border-color: var(--bl);
+    background: var(--bb)
+}
+
+tr.sel td {
+    background: var(--bb)
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bb);
+    color: var(--bl);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 13px;
+    margin: 0 4px 4px 0
+}
+
+.chip button {
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    padding: 0
+}
+
+.pick {
+    max-height: 260px;
+    overflow: auto;
+    border: 1px solid var(--ln);
+    border-radius: 8px;
+    margin-top: 8px
+}
+
+.pk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 9px 12px;
+    background: none;
+    border: 0;
+    border-top: 1px solid var(--ln);
+    font: inherit;
+    font-size: 14px;
+    color: var(--tx);
+    text-align: left;
+    cursor: pointer
+}
+
+.pk:first-child {
+    border-top: 0
+}
+
+.pk:hover {
+    background: var(--bg)
+}
+
+.pk input {
+    width: auto
+}
+
+.pick>small {
+    display: block;
+    padding: 12px
+}
+
+.ug {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 16px
+}
+
+.ug .card {
+    margin: 0
+}
+
+.ugf {
+    grid-column: 1 / -1;
+    margin: 0
+}
+
+@media(max-width:860px) {
+    .ug {
+        grid-template-columns: 1fr
+    }
+}
+
+.li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid var(--ln)
+}
+
+.li.v {
+    display: block
+}
+
+.kv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+    margin-top: 12px
+}
+
+.kv span {
+    display: block;
+    font-size: 12px;
+    color: var(--mu)
+}
+
+.acts {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px
+}
+
+.acts .btn {
+    padding: 6px 12px;
+    font-size: 13px
+}
+
+.er {
+    color: var(--rdt);
+    font-size: 13px;
+    min-height: 18px
+}
+
+dialog {
+    border: 1px solid var(--ln);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--tx);
+    width: min(420px, 92%)
+}
+
+dialog::backdrop {
+    background: #0008
+}
+
+.ft {
+    margin-top: 28px;
+    font-size: 12px;
+    color: var(--mu);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+@media(max-width:860px) {
+    .app {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    aside {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        height: auto;
+        overflow-y: visible;
+        width: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--ln)
+    }
+
+    .ws {
+        display: none
+    }
+
+    .me {
+        margin-top: 0
+    }
+
+    nav {
+        flex-direction: row;
+        overflow-x: auto
+    }
+
+    nav a {
+        white-space: nowrap
+    }
+
+    main {
+        padding: 18px 14px 32px
+    }
+
+    .g2 {
+        grid-template-columns: 1fr
+    }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: #0008;
+    display: grid;
+    place-items: center;
+    z-index: 10
+}
+
+.dlg {
+    background: var(--card);
+    border: 1px solid var(--ln);
+    border-radius: 12px;
+    padding: 18px;
+    width: min(420px, 92%);
+    max-height: 90vh;
+    overflow: auto
+}
+
+nav a .bd {
+    margin-left: 6px
+}
+
+.tabs {
+    display: flex;
+    gap: 18px;
+    border-bottom: 1px solid var(--ln);
+    margin-bottom: 16px;
+    overflow-x: auto;
+    white-space: nowrap
+}
+
+.tabs button {
+    padding: 8px 0;
+    color: var(--mu);
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    font: inherit;
+    cursor: pointer
+}
+
+.tabs .on {
+    color: var(--bl);
+    border-bottom-color: var(--bl);
+    font-weight: 600
+}
+
+.note {
+    background: var(--bb);
+    color: var(--bl);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 13px
+}
+
+.nh {
+    font-size: 11px;
+    color: var(--mu);
+    margin: 14px 10px 4px;
+    text-transform: uppercase;
+    letter-spacing: .04em
+}
+
+@media print {
+
+    aside,
+    .noprint,
+    .btn {
+        display: none !important
+    }
+
+    .app {
+        display: block
+    }
+
+    main {
+        padding: 0;
+        max-width: none
+    }
+
+    body {
+        background: #fff
+    }
+
+    .card {
+        break-inside: avoid
+    }
+}
+
+.flow {
+    display: grid;
+    grid-template-columns: minmax(200px, 260px) 1fr;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.froot {
+    position: relative;
+    text-align: center;
+    background: var(--bb);
+    border: 1px solid var(--bl);
+    border-radius: 12px;
+    padding: 20px 18px
+}
+
+.froot b {
+    display: block;
+    font-size: 36px;
+    margin: 6px 0
+}
+
+.froot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 28px;
+    border-top: 2px solid #c9ced8
+}
+
+.fcards {
+    display: grid;
+    gap: 12px;
+    padding-left: 56px
+}
+
+.fc {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--ln);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px 12px 28px;
+    cursor: pointer
+}
+
+.fc:hover {
+    border-color: var(--bl)
+}
+
+.fc.ca {
+    --cc: var(--ca)
+}
+
+.fc.cl {
+    --cc: var(--cl)
+}
+
+.fc.cs {
+    --cc: var(--cs)
+}
+
+.fc::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    bottom: 10px;
+    width: 6px;
+    border-radius: 4px;
+    background: var(--cc, #f6cf82)
+}
+
+.fct {
+    font-size: 15px;
+    font-weight: 600
+}
+
+.fn {
+    font-size: 30px;
+    line-height: 1;
+    text-align: center
+}
+
+a.bd {
+    text-decoration: none
+}
+
+.fp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px
+}
+
+.fp .bd {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px
+}
+
+/* connectors: a stub into each card plus a vertical spine joining them */
+.fw {
+    position: relative
+}
+
+.fw::after {
+    content: "";
+    position: absolute;
+    left: -28px;
+    width: 28px;
+    top: 50%;
+    border-top: 2px solid #c9ced8
+}
+
+.fw::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: -6px;
+    bottom: -6px;
+    border-left: 2px solid #c9ced8
+}
+
+.fw:first-child::before {
+    top: 50%
+}
+
+.fw:last-child::before {
+    bottom: 50%
+}
+
+@media(max-width:700px) {
+    .flow {
+        grid-template-columns: 1fr;
+        gap: 12px
+    }
+
+    .fcards {
+        padding-left: 0
+    }
+
+    .fc {
+        grid-template-columns: 56px 1fr
+    }
+
+    .fp {
+        grid-column: 1 / -1;
+        justify-content: flex-start
+    }
+
+    .froot::after,
+    .fw::before,
+    .fw::after {
+        display: none
+    }
+}
+
+.auth {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px
+}
+
+.authcard {
+    width: min(380px, 100%);
+    margin: 0
+}
+.drop {
+    border: 2px dashed var(--ln);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 12px 0;
+    text-align: center
+}
+
+.drop.over {
+    border-color: var(--bl);
+    background: var(--bb)
+}
+
+.drop small {
+    display: block;
+    margin-top: 8px
+}
+
+.view {
+    display: block;
+    width: 100%;
+    height: 72vh;
+    border: 1px solid var(--ln);
+    border-radius: 8px
+}
+
+.view.img {
+    object-fit: contain;
+    background: var(--bg)
+}
+
+.doc .row {
+    flex: none
+}
+
+/* bulk import */
+.ibar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.itbl td {
+    vertical-align: top
+}
+
+.itbl input,
+.itbl select {
+    width: 100%;
+    min-width: 130px;
+    padding: 6px 8px;
+    font: inherit;
+    border: 1px solid var(--ln);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--tx)
+}
+
+.itbl td:nth-child(2) input {
+    min-width: 200px
+}
+
+.itbl .ie input,
+.itbl .ie select {
+    border-color: #d9534f;
+    background: var(--rd)
+}
+
+.im {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--rdt)
+}
+
+.dd {
+    position: relative
+}
+
+.ddm {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    min-width: 270px;
+    background: var(--card);
+    border: 1px solid var(--ln);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px #0002;
+    z-index: 20;
+    padding: 6px
+}
+
+.ddm a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 8px
+}
+
+.ddm a:hover {
+    background: var(--bg)
+}
+
+.ddm b,
+.ddm small {
+    display: block
+}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=2.0
+psycopg[binary]>=3.1
+alembic
+argon2-cffi
+pydantic-settings
+python-multipart
+tzdata
+openpyxl
+defusedxml
